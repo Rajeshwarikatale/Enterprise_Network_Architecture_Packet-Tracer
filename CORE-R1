@@ -1,0 +1,115 @@
+CORE-R1#show running-config
+%SYS-5-CONFIG_I: Configured from console by console
+
+Building configuration...
+
+Current configuration : 1419 bytes
+!
+version 15.1
+!
+hostname CORE-R1
+!
+!
+!
+enable password <REDACTED>
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin privilege 15 secret <REDACTED>
+!
+!
+license udi pid CISCO2911/K9 sn FTX15241435-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+no ip domain-lookup
+ip domain-name company.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 172.16.3.130 255.255.255.240
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no ip address
+ duplex auto
+ speed auto
+!
+interface Serial0/2/0
+ ip address 195.136.17.1 255.255.255.252
+ clock rate 64000
+!
+interface Serial0/2/1
+ ip address 195.136.17.5 255.255.255.252
+ clock rate 64000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 10
+ router-id 3.3.3.3
+ log-adjacency-changes
+ network 172.16.3.144 0.0.0.3 area 0
+ network 172.16.3.152 0.0.0.3 area 0
+ network 195.136.17.0 0.0.0.3 area 0
+ network 195.136.17.4 0.0.0.3 area 0
+ network 172.16.3.128 0.0.0.15 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^CNO Unauthorised Access ! ! ! ^C
+!
+!
+!
+!
+line con 0
+ password <REDACTED>
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+end
