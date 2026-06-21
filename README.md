@@ -1,3 +1,38 @@
+# Enterprise Network Architecture using Cisco Packet Tracer
+
+## Project Overview
+Designed and implemented a company enterprise network architecture using Cisco Packet Tracer.
+
+## Technologies Used
+- Cisco Packet Tracer
+- VLAN
+- Inter-VLAN Routing
+- Multilayer Switching
+- OSPF Dynamic Routing
+- SSH Remote Access
+- DHCP
+- Trunking
+
+## Network Design
+- Core Layer: Routers
+- Distribution Layer: Multilayer Switches
+- Access Layer: Department Switches
+
+## Implemented Features
+- Department-wise VLAN segmentation
+- OSPF routing between network layers
+- Secure SSH management
+- Router and switch configurations
+- Network troubleshooting and verification
+
+## Project Files
+- `.pkt` file contains complete topology
+- Config folder contains device configurations
+- Images folder contains topology screenshots
+
+
+
+
 Enterprise Network Design & Secure Routing Implementation (Cisco Packet Tracer)
 Overview
 
